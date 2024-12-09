@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Restaurant Name</title>
+    <body style="background-color:rgb(253, 183, 91);"></body>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Restaurant Name</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h1>Contact Us</h1>
+            <p>We would love to hear from you! Please fill out the form below, and we'll get back to you as soon as possible.</p>
+
+            <form class="contact-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <div class="map-container">
+        <h2>4777 Northfield Pkwy, Troy, MI 48098</h2>
+        <p>Visit us at our location below:</p>
+        <iframe 
+            src="https://www.google.com/maps/place/Troy+High+School/@42.5872196,-83.1813954,17z/data=!3m1!4b1!4m6!3m5!1s0x8824c4140208289b:0xeb4a025d2af303d9!8m2!3d42.5872157!4d-83.1788205!16s%2Fm%2F027fnxt?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Restaurant Name. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
