@@ -1,37 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- setup -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website</title>
-    <body style="background-color:rgb(253, 183, 91);"></body>
-    <link rel="stylesheet" href="styles.css">
+    <title>About Us - Sunny Bites</title>
+    <style>
+        body {
+            background-color: rgb(253, 183, 91);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(255, 136, 34);
+            padding: 10px 20px;
+        }
+        .navbar .logo {
+            font-size: 1.5em;
+            color: white;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: white;
+            color: rgb(255, 136, 34);
+            border-radius: 5px;
+        }
+        .about {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            background-color: rgb(255, 136, 34);
+            color: white;
+            padding: 10px 0;
+        }
+    </style>
 </head>
-<!-- navigation bar -->
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">Restaurant Name</div>
+            <div class="logo">Sunny Bites</div>
             <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
-<!-- history -->
     <main>
         <section class="about">
             <h1>Our History</h1>
-            <p>History Paragraph</p>
+            <p>Sunny Bites began in 2010 with a mission to bring warmth and flavor to every meal. From humble beginnings as a local café, we have grown into a community favorite, offering fresh, locally sourced dishes prepared with care. Join us as we continue to serve meals that brighten your day.</p>
         </section>
-
     </main>
-<!-- copyright -->
     <footer>
-        <p>&copy; 2024 Restaurant Name. All Rights Reserved.</p>
+        <p>&copy; 2024 Sunny Bites. All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>
