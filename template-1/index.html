@@ -1,46 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- setup -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website</title>
-    <body style="background-color:rgb(253, 183, 91);"></body>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sunny Bites</title>
+    <style>
+        body {
+            background-color: rgb(253, 183, 91);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(255, 136, 34);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            margin: 0;
+            color: white;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links li {
+            margin: 0;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: white;
+            color: rgb(255, 136, 34);
+            border-radius: 5px;
+        }
+        .intro, .reviews {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .intro {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .intro img, .reviews img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .reviews {
+            margin-top: 20px;
+        }
+        .reviews .review {
+            margin-bottom: 15px;
+        }
+        footer {
+            text-align: center;
+            background-color: rgb(255, 136, 34);
+            color: white;
+            padding: 10px 0;
+        }
+
+        .featured-dishes {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fff7e6; /* Light background color for contrast */
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-dishes h2 {
+            font-size: 2rem;
+            color: #d35400; /* Bold orange heading */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Styling for Each Dish */
+        .featured-dishes .dish {
+            display: inline-block;
+            width: 28%; /* Adjust width for responsiveness */
+            margin: 10px;
+            padding: 20px;
+            background-color: #ffffff; /* White card background */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            vertical-align: top;
+        }
+
+        /* Dish Image Styling */
+        .featured-dishes .dish img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Dish Title Styling */
+        .featured-dishes .dish h3 {
+            font-size: 1.5rem;
+            color: #e67e22;
+            margin: 10px 0;
+        }
+
+        /* Dish Description Styling */
+        .featured-dishes .dish p {
+            font-size: 1rem;
+            color: #666; /* Muted gray for readability */
+            line-height: 1.5;
+            margin: 5px 0;
+        }
+
+        /* Highlight Price */
+        .featured-dishes .dish p strong {
+            color: #c0392b; /* Highlight price in bold red */
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .featured-dishes .dish {
+                width: 45%; /* Adjust width for smaller screens */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .featured-dishes .dish {
+                width: 90%; /* Full width for mobile */
+            }
+        }
+
+        .navbar h1 a {
+            text-decoration: none; /* Removes underline */
+            color: inherit; /* Inherits color from parent h1 */
+        }
+    </style>
 </head>
-<!-- navigation bar -->
 <body>
     <header>
         <nav class="navbar">
-            <h1>Restaurant Name</h1>
+            <h1><a href="index.html">Sunny Bites</a></h1>
             <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
-<!-- reviews -->
     <main>
         <section class="intro">
-            <h1>Welcome to Our Restaurant!</h1>
-            <p>Welcome Paragraph</p>
+            <img src="placeholder.jpg" alt="Delicious food">
+            <div>
+                <h1>Welcome to Sunny Bites!</h1>
+                <p>We serve the freshest meals made with love and a touch of sunshine. Whether you're here for breakfast, lunch, or dinner, we promise a delightful experience.</p>
+            </div>
+        </section>
+
+        <section class="featured-dishes">
+            <h2>Featured Dishes</h2>
+            <div class="dish">
+                <img src="dish1.jpg" alt="Dish 1">
+                <h3>Caesar Salad</h3>
+                <p>Fresh romaine lettuce, croutons, and parmesan cheese with Caesar dressing.</p>
+                <p><strong>Price:</strong> $8.99</p>
+            </div>
+            <div class="dish">
+                <img src="dish2.jpg" alt="Dish 2">
+                <h3>Grilled Salmon</h3>
+                <p>Perfectly grilled salmon fillet served with a lemon butter sauce.</p>
+                <p><strong>Price:</strong> $15.99</p>
+            </div>
+            <div class="dish">
+                <img src="dish3.jpg" alt="Dish 3">
+                <h3>Chocolate Lava Cake</h3>
+                <p>A warm, gooey chocolate cake with a molten center, served with vanilla ice cream.</p>
+                <p><strong>Price:</strong> $6.99</p>
+            </div>
         </section>
 
         <section id="reviews" class="reviews">
             <h2>What Our Customers Say</h2>
             <div class="review">
-                <p>review - person</p>
+                <img src="placeholder.jpg" alt="Happy customer">
+                <p>"The best restaurant in town! The food is amazing and the service is top-notch." - Emily R.</p>
             </div>
             <div class="review">
-                <p>review - person</p>
+                <img src="placeholder.jpg" alt="Satisfied customer">
+                <p>"I love coming here with my family. The sunny vibes and delicious meals make every visit special." - John T.</p>
             </div>
         </section>
     </main>
-<!-- copyright -->
     <footer>
-        <p>&copy; 2024 Restaurant Name. All Rights Reserved.</p>
+        <p>&copy; 2024 Sunny Bites. All Rights Reserved.</p>
     </footer>
-
 </body>
 </html>
