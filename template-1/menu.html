@@ -3,16 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Restaurant Name</title>
-    <body style="background-color:rgb(253, 183, 91);"></body>
-    <link rel="stylesheet" href="styles.css">
+    <title>Menu - Sunny Bites</title>
+    <style>
+        body {
+            background-color: rgb(253, 183, 91);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(255, 136, 34);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .logo {
+            font-size: 1.5em;
+            color: white;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links li {
+            margin: 0;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: white;
+            color: rgb(255, 136, 34);
+            border-radius: 5px;
+        }
+        .menu {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu h1 {
+            text-align: center;
+            color: rgb(255, 136, 34);
+        }
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        .menu-section h2 {
+            color: rgb(255, 136, 34);
+        }
+        .menu-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu-section li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        footer {
+            text-align: center;
+            background-color: rgb(255, 136, 34);
+            color: white;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">Restaurant Name</div>
+            <div class="logo">Sunny Bites</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -25,36 +99,36 @@
             <div class="menu-section">
                 <h2>Appetizers</h2>
                 <ul>
-                    <li>Menu Item - price</li>
-                    <li>Menu Item - price</li>
+                    <li>Garlic Bread - $4.99</li>
+                    <li>Bruschetta - $6.99</li>
                 </ul>
             </div>
             <div class="menu-section">
                 <h2>Main Courses</h2>
                 <ul>
-                    <li>Menu Item - price</li>
-                    <li>Menu Item - price</li>
+                    <li>Grilled Salmon - $18.99</li>
+                    <li>Spaghetti Carbonara - $14.99</li>
                 </ul>
             </div>
             <div class="menu-section">
                 <h2>Desserts</h2>
                 <ul>
-                    <li>Menu Item - price</li>
-                    <li>Menu Item - price</li>
+                    <li>Chocolate Lava Cake - $7.99</li>
+                    <li>Tiramisu - $6.99</li>
                 </ul>
             </div>
             <div class="menu-section">
                 <h2>Drinks</h2>
                 <ul>
-                    <li>Menu Item - price</li>
-                    <li>Menu Item - price</li>
+                    <li>Fresh Lemonade - $3.99</li>
+                    <li>Espresso - $2.99</li>
                 </ul>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Restaurant Name. All Rights Reserved.</p>
+        <p>&copy; 2024 Sunny Bites. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
