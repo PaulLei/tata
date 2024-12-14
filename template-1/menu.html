@@ -71,6 +71,10 @@
         .menu-section li {
             padding: 5px 0;
             border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .menu-section li:hover {
+            background-color: rgba(255, 136, 34, 0.2);
         }
         footer {
             text-align: center;
@@ -99,29 +103,29 @@
             <div class="menu-section">
                 <h2>Appetizers</h2>
                 <ul>
-                    <li>Garlic Bread - $4.99</li>
-                    <li>Bruschetta - $6.99</li>
+                    <li id="garlic-bread">Garlic Bread - $4.99</li>
+                    <li id="bruschetta">Bruschetta - $6.99</li>
                 </ul>
             </div>
             <div class="menu-section">
                 <h2>Main Courses</h2>
                 <ul>
-                    <li>Grilled Salmon - $18.99</li>
-                    <li>Spaghetti Carbonara - $14.99</li>
+                    <li id="grilled-salmon">Grilled Salmon - $18.99</li>
+                    <li id="spaghetti-carbonara">Spaghetti Carbonara - $14.99</li>
                 </ul>
             </div>
             <div class="menu-section">
                 <h2>Desserts</h2>
                 <ul>
-                    <li>Chocolate Lava Cake - $7.99</li>
-                    <li>Tiramisu - $6.99</li>
+                    <li id="chocolate-lava-cake">Chocolate Lava Cake - $7.99</li>
+                    <li id="tiramisu">Tiramisu - $6.99</li>
                 </ul>
             </div>
             <div class="menu-section">
                 <h2>Drinks</h2>
                 <ul>
-                    <li>Fresh Lemonade - $3.99</li>
-                    <li>Espresso - $2.99</li>
+                    <li id="fresh-lemonade">Fresh Lemonade - $3.99</li>
+                    <li id="espresso">Espresso - $2.99</li>
                 </ul>
             </div>
         </section>
@@ -130,5 +134,30 @@
     <footer>
         <p>&copy; 2024 Sunny Bites. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Object to track click counts
+        const clickCounts = {};
+
+        // Select all menu items
+        const menuItems = document.querySelectorAll('.menu-section li');
+
+        // Add click listeners
+        menuItems.forEach(item => {
+            const id = item.id; // Get the ID of the menu item
+            clickCounts[id] = 0; // Initialize count
+
+            item.addEventListener('click', () => {
+                // Increment the click count
+                clickCounts[id]++;
+                
+                // Display click count in the console
+                console.log(`${item.textContent} clicked ${clickCounts[id]} times`);
+                
+                // Optional: Update the item's text with the click count
+                item.textContent = `${item.textContent.split(' (')[0]} (${clickCounts[id]} clicks)`;
+            });
+        });
+    </script>
 </body>
 </html>
