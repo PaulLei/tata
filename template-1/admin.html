@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunny Bites - Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(253, 183, 91);
+        }
+        .login-container, .admin-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            width: 550px;
+            text-align: center;
+        }
+        .login-container input, .admin-container input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-container button, .admin-container button {
+            padding: 10px 20px;
+            background-color: rgb(255, 136, 34);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover, .admin-container button:hover {
+            background-color: rgb(255, 102, 0);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: rgb(255, 136, 34);
+            color: white;
+        }
+        .logout-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Form -->
+    <div class="login-container" id="login-container">
+        <h1>Sunny Bites Admin Login</h1>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Admin Page -->
+    <div class="admin-container" id="admin-container" style="display: none;">
+        <h1>Click Data</h1>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Menu Item</th>
+                    <th>Clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted dynamically -->
+            </tbody>
+        </table>
+        <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // Admin credentials
+        const ADMIN_CREDENTIALS = {
+            username: "admin1",
+            password: "password123" // For simplicity; in real scenarios, use secure methods
+        };
+
+        // Check if the user is already logged in
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            showAdminPage();
+        }
+
+        // Handle login
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+                localStorage.setItem("isLoggedIn", "true");
+                showAdminPage();
+            } else {
+                alert("Invalid credentials. Please try again.");
+            }
+        }
+
+        // Show the admin page
+        function showAdminPage() {
+            document.getElementById("login-container").style.display = "none";
+            document.getElementById("admin-container").style.display = "block";
+            loadClickData();
+        }
+
+        // Load click data and populate the table
+        function loadClickData() {
+            const clickCounts = JSON.parse(localStorage.getItem("clickCounts")) || {};
+            const tbody = document.getElementById("data-table").querySelector("tbody");
+
+            tbody.innerHTML = ""; // Clear any existing rows
+
+            for (const [item, count] of Object.entries(clickCounts)) {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td>${item}</td><td>${count}</td>`;
+                tbody.appendChild(row);
+            }
+        }
+
+        // Handle logout
+        function logout() {
+            localStorage.setItem("isLoggedIn", "false");
+            document.getElementById("admin-container").style.display = "none";
+            document.getElementById("login-container").style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espresso - Sunny Bites</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(253, 183, 91);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(255, 136, 34);
+            padding: 10px 20px;
+        }
+        .navbar .logo {
+            font-size: 1.5em;
+            color: white;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .content h1 {
+            color: rgb(255, 136, 34);
+            text-align: center;
+        }
+        .content p {
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .nutrition-table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: rgb(255, 136, 34);
+            color: white;
+        }
+        footer {
+            text-align: center;
+            background-color: rgb(255, 136, 34);
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Sunny Bites</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <img src="placeholder.jpg" alt="Espresso">
+            <h1>Espresso</h1>
+            <p>
+                Text
+            </p>
+            <h2>Nutrition Information</h2>
+            <table class="nutrition-table">
+                <thead>
+                    <tr>
+                        <th>Nutrient</th>
+                        <th>Amount per Serving</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Calories</td>
+                        <td>350 kcal</td>
+                    </tr>
+                    <tr>
+                        <td>Fat</td>
+                        <td>18 g</td>
+                    </tr>
+                    <tr>
+                        <td>Saturated Fat</td>
+                        <td>10 g</td>
+                    </tr>
+                    <tr>
+                        <td>Carbohydrates</td>
+                        <td>45 g</td>
+                    </tr>
+                    <tr>
+                        <td>Sugar</td>
+                        <td>35 g</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>5 g</td>
+                    </tr>
+                    <tr>
+                        <td>Dietary Fiber</td>
+                        <td>3 g</td>
+                    </tr>
+                    <tr>
+                        <td>Sodium</td>
+                        <td>150 mg</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sunny Bites. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
