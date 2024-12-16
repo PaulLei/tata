@@ -103,6 +103,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             vertical-align: top;
+            cursor: pointer;
         }
 
         /* Dish Image Styling */
@@ -144,11 +145,6 @@
                 width: 90%; /* Full width for mobile */
             }
         }
-
-        .navbar h1 a {
-            text-decoration: none; /* Removes underline */
-            color: inherit; /* Inherits color from parent h1 */
-        }
     </style>
 </head>
 <body>
@@ -165,7 +161,7 @@
     </header>
     <main>
         <section class="intro">
-            <img src="placeholder.jpg" alt="Delicious food">
+            <img src="chickensalad.png" alt="Delicious food">
             <div>
                 <h1>Welcome to Sunny Bites!</h1>
                 <p>We serve the freshest meals made with love and a touch of sunshine. Whether you're here for breakfast, lunch, or dinner, we promise a delightful experience.</p>
@@ -174,40 +170,47 @@
 
         <section class="featured-dishes">
             <h2>Featured Dishes</h2>
-            <div class="dish">
-                <img src="dish1.jpg" alt="Dish 1">
+            <div class="dish" data-id="garlic-bread" onclick="handleClick(this, 'garlicBread.html')">
+                <img src="dish1.jpg" alt="Caesar Salad">
                 <h3>Caesar Salad</h3>
                 <p>Fresh romaine lettuce, croutons, and parmesan cheese with Caesar dressing.</p>
                 <p><strong>Price:</strong> $8.99</p>
             </div>
-            <div class="dish">
-                <img src="dish2.jpg" alt="Dish 2">
+            <div class="dish" data-id="grilled-salmon" onclick="handleClick(this, 'grilledSalmon.html')">
+                <img src="dish2.jpg" alt="Grilled Salmon">
                 <h3>Grilled Salmon</h3>
                 <p>Perfectly grilled salmon fillet served with a lemon butter sauce.</p>
                 <p><strong>Price:</strong> $15.99</p>
             </div>
-            <div class="dish">
-                <img src="dish3.jpg" alt="Dish 3">
+            <div class="dish" data-id="chocolate-lava-cake" onclick="handleClick(this, 'chocolateLavaCake.html')">
+                <img src="dish3.jpg" alt="Chocolate Lava Cake">
                 <h3>Chocolate Lava Cake</h3>
                 <p>A warm, gooey chocolate cake with a molten center, served with vanilla ice cream.</p>
                 <p><strong>Price:</strong> $6.99</p>
-            </div>
-        </section>
-
-        <section id="reviews" class="reviews">
-            <h2>What Our Customers Say</h2>
-            <div class="review">
-                <img src="placeholder.jpg" alt="Happy customer">
-                <p>"The best restaurant in town! The food is amazing and the service is top-notch." - Emily R.</p>
-            </div>
-            <div class="review">
-                <img src="placeholder.jpg" alt="Satisfied customer">
-                <p>"I love coming here with my family. The sunny vibes and delicious meals make every visit special." - John T.</p>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Sunny Bites. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Load or initialize clickCounts from localStorage
+        const clickCounts = JSON.parse(localStorage.getItem('clickCounts')) || {};
+
+        function handleClick(element, url) {
+            const id = element.dataset.id;
+
+            // Increment the click count for this dish and overall
+            clickCounts[id] = (clickCounts[id] || 0) + 1;
+            clickCounts.total = (clickCounts.total || 0) + 1;
+
+            // Store updated click counts in localStorage
+            localStorage.setItem('clickCounts', JSON.stringify(clickCounts));
+
+            // Redirect to the dish page
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>
