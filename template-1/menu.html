@@ -91,7 +91,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="admin.html">Admin</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
@@ -103,61 +103,29 @@
             <div class="menu-section">
                 <h2>Appetizers</h2>
                 <ul>
-                    <li>
-                        <a href="garlicBread.html" style="text-decoration: none; color: inherit; cursor: pointer;">
-                            Garlic Bread - 2.99
-                        </a>
-                    </li>
-                    <li>
-                        <a href="bruschetta.html" style="text-decoration: none; color: inherit; cursor: pointer;">
-                            Bruschetta - $4.99
-                        </a>
-                    </li>
+                    <li id="garlic-bread">Garlic Bread - $2.99</li>
+                    <li id="bruschetta">Bruschetta - $4.99</li>
                 </ul>
             </div>
             <div class="menu-section">
                 <h2>Main Courses</h2>
                 <ul>
-                    <li>
-                        <a href="grilledSalmon.html" style="text-decoration: none; color: inherit; cursor: pointer;">
-                            Grilled Salmon - $12.99
-                        </a>
-                    </li>
-                    <li>
-                        <a href="spaghettiCarbonara.html" style="text-decoration: none; color: inherit; cursor: pointer;">
-                            Spaghetti Carbonara - 15.99
-                        </a>
-                    </li>
+                    <li id="grilled-salmon">Grilled Salmon - $12.99</li>
+                    <li id="spaghetti-carbonara">Spaghetti Carbonara - $15.99</li>
                 </ul>
             </div>
             <div class="menu-section">
                 <h2>Desserts</h2>
                 <ul>
-                    <li>
-                        <a href="chocolateLavaCake.html" style="text-decoration: none; color: inherit; cursor: pointer;">
-                            Chocolate Lava Cake - $7.99
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tiramisu.html" style="text-decoration: none; color: inherit; cursor: pointer;">
-                            Tiramisu - $6.99
-                        </a>
-                    </li>
+                    <li id="chocolate-lava-cake">Chocolate Lava Cake - $7.99</li>
+                    <li id="tiramisu">Tiramisu - $6.99</li>
                 </ul>
             </div>
             <div class="menu-section">
                 <h2>Drinks</h2>
                 <ul>
-                    <li>
-                        <a href="freshLemonade.html" style="text-decoration: none; color: inherit; cursor: pointer;">
-                            Fresh Lemonade - $2.99
-                        </a>
-                    </li>
-                    <li>
-                        <a href="espresso.html" style="text-decoration: none; color: inherit; cursor: pointer;">
-                            Espresso - $2.99
-                        </a>
-                    </li>
+                    <li id="fresh-lemonade">Fresh Lemonade - $2.99</li>
+                    <li id="espresso">Espresso - $2.99</li>
                 </ul>
             </div>
         </section>
@@ -191,8 +159,6 @@
                 localStorage.setItem('clickCounts', JSON.stringify(clickCounts));
             });
         });
-
     </script>
 </body>
-
 </html>
