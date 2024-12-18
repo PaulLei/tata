@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunny Bites</title>
+    <style>
+        header{
+            text-align: center;
+            color: #d35400;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(253, 183, 91);
+        }
+        .menu {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu h1 {
+            text-align: center;
+            color: rgb(255, 136, 34);
+        }
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        .menu-section h2 {
+            color: rgb(255, 136, 34);
+        }
+        .menu-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu-section li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .menu-section li:hover {
+            background-color: rgba(255, 136, 34, 0.2);
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+        .content img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .content h1 {
+            color: rgb(255, 136, 34);
+            text-align: center;
+        }
+        .content p {
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .nutrition-table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: rgb(255, 136, 34);
+            color: white;
+        }
+        .about {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .contact {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact h1 {
+            text-align: center;
+            color: rgb(255, 136, 34);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            resize: none;
+        }
+        .contact-form button {
+            display: block;
+            width: 90%;
+            padding: 10px;
+            background-color: rgb(255, 136, 34);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: rgb(240, 120, 30);
+        }
+        .map-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        .featured-dishes {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fff7e6; /* Light background color for contrast */
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-dishes h2 {
+            font-size: 2rem;
+            color: #d35400; /* Bold orange heading */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Styling for Each Dish */
+        .featured-dishes .dish {
+            display: inline-block;
+            width: 28%; /* Adjust width for responsiveness */
+            margin: 10px;
+            padding: 20px;
+            background-color: #ffffff; /* White card background */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            vertical-align: top;
+            cursor: pointer;
+        }
+
+        /* Dish Image Styling */
+        .featured-dishes .dish img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Dish Title Styling */
+        .featured-dishes .dish h3 {
+            font-size: 1.5rem;
+            color: #e67e22;
+            margin: 10px 0;
+        }
+
+        /* Dish Description Styling */
+        .featured-dishes .dish p {
+            font-size: 1rem;
+            color: #666; /* Muted gray for readability */
+            line-height: 1.5;
+            margin: 5px 0;
+        }
+
+        /* Highlight Price */
+        .featured-dishes .dish p strong {
+            color: #c0392b; /* Highlight price in bold red */
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .featured-dishes .dish {
+                width: 45%; /* Adjust width for smaller screens */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .featured-dishes .dish {
+                width: 90%; /* Full width for mobile */
+            }
+        }
+        footer {
+            text-align: center;
+            background-color: rgb(255, 136, 34);
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sunny Bites</h1>
+    </header>
+
+    <section class="featured-dishes">
+        <h2>Featured Dishes</h2>
+        <div class="dish" data-id="garlic-bread" onclick="handleClick(this, 'garlicBread.html')">
+            <img src="dish1.jpg" alt="Garlic Bread">
+            <h3>Garlic Bread</h3>
+            <p>Fresh romaine lettuce, croutons, and parmesan cheese with Caesar dressing.</p>
+            <p><strong>Price:</strong> $8.99</p>
+        </div>
+        <div class="dish" data-id="grilled-salmon" onclick="handleClick(this, 'grilledSalmon.html')">
+            <img src="dish2.jpg" alt="Grilled Salmon">
+            <h3>Grilled Salmon</h3>
+            <p>Perfectly grilled salmon fillet served with a lemon butter sauce.</p>
+            <p><strong>Price:</strong> $15.99</p>
+        </div>
+        <div class="dish" data-id="chocolate-lava-cake" onclick="handleClick(this, 'chocolateLavaCake.html')">
+            <img src="dish3.jpg" alt="Chocolate Lava Cake">
+            <h3>Chocolate Lava Cake</h3>
+            <p>A warm, gooey chocolate cake with a molten center, served with vanilla ice cream.</p>
+            <p><strong>Price:</strong> $6.99</p>
+        </div>
+    </section>
+
+    <script>
+        // Load or initialize clickCounts from localStorage
+        const clickCounts = JSON.parse(localStorage.getItem('clickCounts')) || {};
+
+        function handleClick(element, url) {
+            const id = element.dataset.id;
+
+            // Increment the click count for this dish and overall
+            clickCounts[id] = (clickCounts[id] || 0) + 1;
+            clickCounts.total = (clickCounts.total || 0) + 1;
+
+            // Store updated click counts in localStorage
+            localStorage.setItem('clickCounts', JSON.stringify(clickCounts));
+
+            // Redirect to the dish page
+            window.location.href = url;
+        }
+    </script>
+
+    <main>
+    <section class="about">
+        <h1>Our History</h1>
+        <p>Sunny Bites began in 2010 with a mission to bring warmth and flavor to every meal. From humble beginnings as a local café, we have grown into a community favorite, offering fresh, locally sourced dishes prepared with care. Join us as we continue to serve meals that brighten your day.</p>
+    </section>
+    </main>
+
+    <main>
+        <section class="menu">
+            <h1>Our Menu</h1>
+            <div class="menu-section">
+                <h2>Appetizers</h2>
+                <ul>
+                    <li id="garlic-bread">Garlic Bread - $2.99</li>
+                    <li id="bruschetta">Bruschetta - $4.99</li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Main Courses</h2>
+                <ul>
+                    <li id="grilled-salmon">Grilled Salmon - $12.99</li>
+                    <li id="spaghetti-carbonara">Spaghetti Carbonara - $15.99</li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Desserts</h2>
+                <ul>
+                    <li id="chocolate-lava-cake">Chocolate Lava Cake - $7.99</li>
+                    <li id="tiramisu">Tiramisu - $6.99</li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Drinks</h2>
+                <ul>
+                    <li id="fresh-lemonade">Fresh Lemonade - $2.99</li>
+                    <li id="espresso">Espresso - $2.99</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+
+        // Select all menu items
+        const menuItems = document.querySelectorAll('.menu-section li');
+
+        // Add click listeners
+        menuItems.forEach(item => {
+            const id = item.id;
+
+            // Initialize count if not already present
+            if (!clickCounts[id]) {
+                clickCounts[id] = 0;
+            }
+
+            item.addEventListener('click', () => {
+                // Increment the click count
+                clickCounts[id]++;
+                
+                // Save updated click counts to localStorage
+                localStorage.setItem('clickCounts', JSON.stringify(clickCounts));
+            });
+        });
+    </script>
+
+    <main>
+        <section class="contact">
+            <h1>Contact Us</h1>
+            <p>We would love to hear from you! Please fill out the form below, and we'll get back to you as soon as possible.</p>
+            <form class="contact-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        <div class="map-container">
+            <h2>Visit Us at Sunny Bites</h2>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2938.440707865189!2d-83.1813954!3d42.5872196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824c4140208289b%3A0xeb4a025d2af303d9!2sTroy%20High%20School!5e0!3m2!1sen!2sus!4v1689390180321!5m2!1sen!2sus"
+                allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sunny Bites. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

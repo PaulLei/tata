@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Sunny Bites</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(253, 183, 91);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .admin-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            width: 550px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: rgb(255, 136, 34);
+            color: white;
+        }
+        footer {
+            text-align: center;
+            background-color: rgb(255, 136, 34);
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .reset-button {
+            background-color: rgb(255, 136, 34);
+            color: white;
+            border: none;
+            padding: 10px 21px;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .reset-button:hover {
+            background-color: rgb(204, 110, 28);
+            transform: scale(1.05);
+        }
+        .reset-button:active {
+            background-color: rgb(153, 85, 21);
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Click Data</h1>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Menu Item</th>
+                    <th>Clicks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be dynamically inserted here -->
+            </tbody>
+        </table>
+        <button class="reset-button" onclick="resetCounts()">Reset Counts</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sunny Bites. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Load click data into the admin table
+        function updateAdminTable() {
+            const tbody = document.getElementById('data-table').querySelector('tbody');
+            tbody.innerHTML = ""; // Clear existing rows
+
+            const clickCounts = JSON.parse(localStorage.getItem('clickCounts')) || {};
+
+            const menuItems = [
+                { id: "garlic-bread", name: "Garlic Bread" },
+                { id: "bruschetta", name: "Bruschetta" },
+                { id: "grilled-salmon", name: "Grilled Salmon" },
+                { id: "spaghetti-carbonara", name: "Spaghetti Carbonara" },
+                { id: "chocolate-lava-cake", name: "Chocolate Lava Cake" },
+                { id: "tiramisu", name: "Tiramisu" },
+                { id: "fresh-lemonade", name: "Fresh Lemonade" },
+                { id: "espresso", name: "Espresso" }
+            ];
+
+            menuItems.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${item.name}</td><td>${clickCounts[item.id] || 0}</td>`;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Reset all counts
+        function resetCounts() {
+            localStorage.removeItem('clickCounts');
+            updateAdminTable();
+        }
+
+        // Load data on page load
+        updateAdminTable();
+    </script>
+</body>
+</html>
