@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+   
+   }
+   img{
+       background-color:transparent;
+       width:30%;
+        transform: translate(-210%,-80%);
+        border: #FFB347;
+   }
+   
+   section {
+       height: 100vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       scroll-snap-align: start;
+   
+   }
+   
+   .container{
+       scroll-snap-type: y mandatory;
+       overflow-y: scroll;
+       height: 100vh;
+       
+   }
+   
+   .one p{
+       font-family: 'Courier New', Courier, monospace;
+       font-size: 1.5rem;
+       font-weight: bold;
+       max-width: 40%;
+       position: absolute;
+       right: 5%;
+       
+       text-align: left;
+       transform: translateY
+       
+   }
+   
+   
+   
+   .one {
+       background: #FFB347;
+       display: flex;
+       flex-direction: row; /* Ensures content is laid out horizontally */
+       background-image: url('sun.png');
+       background-size: 700px;
+       background-position: left center;
+       background-repeat: no-repeat;
+       height: 100vh;
+       align-items: center; /* Centers items vertically */
+       justify-content: center; /* Ensures the layout remains structured */
+       position: relative;
+       padding: 5%; /* Adds some space from the edges */
+     
+   
+   
+   
+   }
+   .one h1{
+   
+       font-size: 4rem;
+       font-weight: bold;
+       position: absolute;
+       left: 50%;
+       transform: translateX(-50%);
+       text-align: center;
+       writing-mode: vertical-lr; /* Rotates text to be vertical (right to left) */
+       text-orientation: upright;
+       white-space: nowrap;
+       /* Ensures letters are upright */
+       
+   
+   
+       
+   
+   }
+   .two{
+      background: #FAEBD7;
+      display: flex;
+   flex-direction: row;
+       align-items: center; /* Centers items vertically */
+       justify-content: center; /* Ensures the layout remains structured */
+       position: relative;
+       padding: 5%; /* Adds some space from the edges */
+   }
+   .two h1{
+       font-size: 6rem;
+       font-weight: bold;
+       position: left;
+       text-align:left;
+       white-space: nowrap;
+       transform: translateX(20%);
+       
+   
+   }
+   .summary{
+         font-size: 1.5rem;
+         font-weight: bold;
+         max-width: 40%;
+         
+         right:5%;
+         text-align: left;
+         transform:translateX(30%);
+         padding: 5%;
+         float:right;
+   }
+   .quote1{
+       font-size: 1.5rem;
+       font-weight: bold;
+       max-width: 45%;
+       position: absolute;
+       left: 5%;
+       text-align: center;
+       transform: translate(5%,120%);
+       padding:5%;
+       
+       
+       
+   }
+    .quote2{
+         font-size: 1.5rem;
+         font-weight: bold;
+         max-width: 45%;
+         position: absolute;
+         right: 5%;
+         text-align: center;
+         transform: translate(-5%,120%);
+         padding:5%;
+         
+    }
+   .three{
+       background: rgb(255, 136, 34);
+   }
+   .four{
+       background: #fff7e6;
+   }
