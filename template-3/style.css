@@ -30,14 +30,16 @@
    
    .one p{
        font-family: 'Courier New', Courier, monospace;
-       font-size: 1.5rem;
-       font-weight: bold;
-       max-width: 40%;
-       position: absolute;
-       right: 5%;
+       font-size: 1.2rem;
+       font-weight: normal;
+       text-align: center;
        
-       text-align: left;
-       transform: translateY
+       position: absolute;
+        /* Rotates text to be vertical (right to left) */
+       color: white;
+       white-space: nowrap;
+       z-index:2;
+       transform:translateY(210%);
        
    }
    
@@ -47,9 +49,9 @@
        background: #FFB347;
        display: flex;
        flex-direction: row; /* Ensures content is laid out horizontally */
-       background-image: url('sun.png');
-       background-size: 700px;
-       background-position: left center;
+       background-image: url('cafe.jpeg');
+       background-size: cover;
+       background-position: center;
        background-repeat: no-repeat;
        height: 100vh;
        align-items: center; /* Centers items vertically */
@@ -61,6 +63,16 @@
    
    
    }
+   .one::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Ensures the overlay is above the background image */
+}
    .one h1{
    
        font-size: 4rem;
@@ -69,9 +81,11 @@
        left: 50%;
        transform: translateX(-50%);
        text-align: center;
-       writing-mode: vertical-lr; /* Rotates text to be vertical (right to left) */
-       text-orientation: upright;
+        /* Rotates text to be vertical (right to left) */
+       color: white;
        white-space: nowrap;
+       z-index:2;
+       margin-bottom:0.5rem;
        /* Ensures letters are upright */
        
    
@@ -80,7 +94,7 @@
    
    }
    .two{
-      background: #FAEBD7;
+      background: #FFF5E1;
       display: flex;
    flex-direction: row;
        align-items: center; /* Centers items vertically */
@@ -139,3 +153,60 @@
    .four{
        background: #fff7e6;
    }
+   .topnav{
+         background-color: rgba(0, 0, 0, 0.432);
+         overflow: hidden;
+         position: fixed;
+         top: 0;
+         width: 100%;
+         z-index: 1;
+         height: 80px;
+        display: flex;
+         padding:10px;
+         align-items: center;
+        justify-content: center;
+        z-index:5;
+        justify-content: space-around;
+        color: white;
+        
+   }
+   .topnav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+   }
+   .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .topnav a.active {
+    background-color: #676867;
+    color: white;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+  .fullMenu{
+    font-size: 18px;
+    font-weight: bold;
+    border:none;
+    background-color: black;
+    color:whitesmoke;
+    cursor: pointer;
+    z-index: 5;
+    transform: translateY(200%);
+    padding: 20px 20px;
+    size:30px;
+    border: whitesmoke;
+    border-radius: 10px;
+    
+    border-width: 5px;
+    border-color: whitesmoke;
+    border-style: solid;
+    
+    
+  }

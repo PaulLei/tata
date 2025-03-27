@@ -3,45 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content=""width=device-width, inital-scale="1.0">
-<title> Sunny Bites </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunny Bites</title>
 <link rel="stylesheet" href="./style.css">
-
 </head>
 <body>
+<div class="topnav">
+    <a class="inactive" href="#home">Home</a>
+    <a href="#aboutUs">About Us</a>
+    <a href="#three">Menu</a>
+    <a href="#four">Inquiries</a>
+</div>
+
 <div class="container">
-    <section class="one">
-        <h1>SUNNY BITES</h1>
-        
-            <p>We serve the freshest meals made with love and a touch of sunshine. Whether you're here for breakfast, lunch, or dinner, we promise a delightful experience. We are certain you will come back for more once you get a taste of us! </p>
-            
-   
+    <section id="home" class="one">
+        <h1>GENERIC CAFE</h1>
+        <p>We are the best cafe in town!</p>
+        <button class="fullMenu" onclick="window.open('menu.pdf', '_blank')"> Full Menu </button>
     </section>
-    <section class="two">
+
+    <section id="aboutUs" class="two">
         <h1>About Us</h1>
-       
-            <p class="summary">
-                Sunny Bites began in 2010 with a mission to bring warmth and flavor to every meal. From humble beginnings as a local café, we have grown into a community favorite, offering fresh, locally sourced dishes prepared with care. Join us as we continue to serve meals that brighten your day. 
-            </p>
-            <p class="quote1">
-               "This is the greatest food I've ever had in my life!"- Paul Lei
-            </p>
-            <p class="quote2">
-               "Normally I eat seconds always but here I came back for fourths"-Rohan Sukumar 
-            </p>
-            <img src="sunnybites.png" alt="Sunny Bites" class="img">
-       
+        <p class="summary">
+            Sunny Bites began in 2010 with a mission to bring warmth and flavor to every meal. From humble beginnings as a local café, we have grown into a community favorite, offering fresh, locally sourced dishes prepared with care. Join us as we continue to serve meals that brighten your day.
+        </p>
+        <p class="quote1">
+            "This is the greatest food I've ever had in my life!" - Paul Lei
+        </p>
+        <p class="quote2">
+            "Normally I eat seconds always but here I came back for fourths" - Rohan Sukumar
+        </p>
+        <img src="sunnybites.png" alt="Sunny Bites" class="img">
     </section>
-    <section class="three">
+    <section id="three" class="three">
         <h1>Menu</h1>
-        
-           
-      
     </section>
-    <section class="four">
+    <section id="four" class="four">
         <h1>Inquiries</h1>
     </section>
 </div>
-
+<script>
+    document.querySelectorAll('.topnav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
 </body>
 </html>
