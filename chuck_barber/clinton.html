@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuck's Barbershop | Troy Location</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      font-size: 20px;
+      background: #222;
+      color: white;
+      text-align: center;
+    }
+    /* Centered navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 10px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .nav-left, .nav-right {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 5px 10px;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #ffcc00; }
+    .nav-logo img { height: 70px; }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      position: relative;
+      background: url('store.webp') no-repeat center center;
+      background-size: cover;
+    }
+    .hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      text-transform: uppercase;
+      padding-top: 12%;
+      align-items: center;
+      margin: 0.001%;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 15px;
+    }
+    
+    /* Section Styling */
+    .section {
+      padding: 80px 20px;
+      position: relative;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    .section::before {
+      content:"";
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: rgba(0,0,0,0.7);
+    }
+    .section h2, .section p {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Barbers Section */
+    .barbers-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .barber-card {
+      background: rgb(46, 46, 46); /* slightly less transparent */
+      padding: 20px;
+      border-radius: 5px;
+      width: 300px;
+      transition: transform 0.3s;
+      filter: brightness(1.0);
+    }
+    .barber-card:hover {
+      transform: translateY(-5px);
+    }
+    .barber-card img {
+      width: 100%;
+      border-radius: 5px;
+      display: block;
+    }
+    .barber-card h3 {
+      margin-top: 10px;
+    }
+    .barber-card p {
+      font-size: 16px;
+    }
+    .barber-card .btn {
+      margin-top: 10px;
+      background: #ffcc00;
+      color: #000000;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .barber-card .btn:hover {
+      background: #ffcc00;
+    }
+    
+    /* Business Hours & Contact Section */
+    .contact-section {
+      background: rgba(37, 36, 36, 0.767);
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    
+    /* Reviews Section */
+    .reviews-container {
+      overflow-x: auto;
+      display: flex;
+      gap: 20px;
+      padding: 10px;
+    }
+    .review-card {
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      min-width: 300px;
+      border-radius: 5px;
+    }
+    .stars {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    .hours-container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 0 20px;
+    }
+    .google-map {
+      flex: 1 1 300px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .google-map {
+      position: relative;
+    }
+    .google-map iframe {
+      width: 100%;
+      height: 160%;
+      border: 2;
+      border-radius: 5px;
+    }
+    footer {
+      background: #111;
+      padding: 20px;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+      </div>
+      <div class="nav-logo">
+        <a href="#hero"><img src="logo.jpg" alt="Logo"></a>
+      </div>
+      <div class="nav-right">
+        <a href="#reviews">Reviews</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <div class="hero" id="hero">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Troy Location</h1>
+      <p>Chuck's Barbershop - Troy, MI</p>
+    </div>
+  </div>
+  
+  <!-- Barbers Section -->
+  <section id="barbers" class="section">
+    <h2>Our Barbers</h2>
+    <div class="barbers-container">
+      <div class="barber-card">
+        <img src="team1.webp" alt="Barber 1">
+        <h3>Barber 1</h3>
+        <p>Expert in classic cuts and beard grooming with over 10 years of experience.</p>
+        <a href="https://calendly.com/yourcalendlylink1" class="btn">Book Now</a>
+      </div>
+      <div class="barber-card">
+        <img src="team2.webp" alt="Barber 2">
+        <h3>Barber 2</h3>
+        <p>Specializes in modern styles and precision fades. Known for his attention to detail.</p>
+        <a href="https://calendly.com/yourcalendlylink2" class="btn">Book Now</a>
+      </div>
+      <div class="barber-card">
+        <img src="team3.webp" alt="Barber 3">
+        <h3>Barber 3</h3>
+        <p>Passionate about creating unique looks tailored to each client. Friendly and professional.</p>
+        <a href="https://calendly.com/yourcalendlylink3" class="btn">Book Now</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Business Hours & Contact Section -->
+  <section id="contact" class="section">
+    <h2>Business Hours & Contact</h2>
+    <div class="contact-section">
+      <p><strong>Hours:</strong> Tuesday - Friday: 8 AM - 6 PM | Saturday: 9 AM - 2 PM | Sunday - Monday: Closed</p>
+      <p><strong>Address:</strong> 41130 Hayes Rd, Clinton Twp, MI 48038</p>
+      <p><strong>Phone:</strong> (586) 913-7645</p>
+      <div class="google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2936.9802887729697!2d-82.97391422341096!3d42.59816172002493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824dfe9081d5419%3A0x9ae7ea0693f2b3f0!2sEuro%20Styles!5e0!3m2!1sen!2sus!4v1743388050193!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </div>
+    </div>
+  </section>
+  
+  <!-- Reviews Section -->
+  <section id="reviews" class="section">
+    <h2>Customer Reviews</h2>
+    <div class="reviews-container">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Amazing service and a welcoming atmosphere. Love the vibe!"</p>
+        <p>- Chris</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p>"Great experience every time I visit. Highly recommended!"</p>
+        <p>- Sam</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"The barbers are true professionals. Best cut I've ever had!"</p>
+        <p>- Jordan</p>
+      </div>
+    </div>
+  </section>
+  
+  <footer>&copy; 2025 EuroStyles Barbershop. All rights reserved</footer>
+</body>
+</html>
