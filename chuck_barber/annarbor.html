@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Euro Styles | Clinton Location</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      font-size: 20px;
+      background: #222;
+      color: white;
+      text-align: center;
+    }
+    /* Centered navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px 10px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .nav-left, .nav-right {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 5px 10px;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #ffcc00; }
+    .nav-logo img { height: 70px; }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      position: relative;
+      background: url('store.webp') no-repeat center center;
+      background-size: cover;
+    }
+    .hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      text-transform: uppercase;
+      padding-top: 12%;
+      align-items: center;
+      margin: 0.001%;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 15px;
+    }
+    
+    /* Section Styling */
+    .section {
+      padding: 80px 20px;
+      position: relative;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    .section::before {
+      content:"";
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: rgba(0,0,0,0.7);
+    }
+    .section h2, .section p {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Barbers Section */
+    .barbers-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .barber-card {
+      background: rgb(75, 75, 75); /* slightly less transparent */
+      padding: 20px;
+      border-radius: 5px;
+      width: 300px;
+      transition: transform 0.3s;
+      filter: brightness(1.0);
+    }
+    .barber-card:hover {
+      transform: translateY(-5px);
+    }
+    .barber-card img {
+      width: 100%;
+      border-radius: 5px;
+      display: block;
+      height: 50%;
+    }
+    .barber-card h3 {
+      margin-top: 10px;
+    }
+    .barber-card p {
+      font-size: 16px;
+    }
+    .barber-card .btn {
+      margin-top: 10px;
+      background: #ffcc00;
+      color: #000000;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .barber-card .btn:hover {
+      background: #ffcc00;
+    }
+    
+    /* Business Hours & Contact Section */
+    .contact-section {
+      background: rgba(37, 36, 36, 0.767);
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    
+    /* Reviews Section */
+    .reviews-container {
+      overflow-x: auto;
+      display: flex;
+      gap: 20px;
+      padding: 10px;
+    }
+    .review-card {
+      background: rgba(0,0,0,0.7);
+      padding: 20px;
+      min-width: 300px;
+      border-radius: 5px;
+    }
+    .stars {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    .hours-container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 0 20px;
+    }
+    .google-map {
+      flex: 1 1 300px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .google-map {
+      position: relative;
+    }
+    .google-map iframe {
+      width: 100%;
+      height: 160%;
+      border: 2;
+      border-radius: 5px;
+    }
+    footer {
+      background: #111;
+      padding: 20px;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+      </div>
+      <div class="nav-logo">
+        <a href="#hero"><img src="logo.jpg" alt="Logo"></a>
+      </div>
+      <div class="nav-right">
+        <a href="#reviews">Reviews</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <div class="hero" id="hero">
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Clinton Location</h1>
+      <p>Euro Styles- Clinton, MI</p>
+    </div>
+  </div>
+  
+  <!-- Barbers Section -->
+  <section id="barbers" class="section">
+    <h2>Our Barbers</h2>
+    <div class="barbers-container">
+      <div class="barber-card">
+        <img src="gerald.jpeg" alt="Gerald Alishollari">
+        <h3>Gerald Alishollari</h3>
+        <p >Head Barber &amp; Founder</p>
+        <p>As a visionary barber entrepreneur, Gerald is the driving force behind EuroStyles. He founded the barbershop with a commitment to creating premium experiences that blend European precision with contemporary style. His entrepreneurial spirit and dedication to excellence have established EuroStyles as a destination for discerning clients.</p>
+        <p>Specialties: Classic Cuts | Precision Fades | Beard Sculpting</p>
+        <a href="https://calendly.com/yourcalendlylink1" class="btn">Book Now</a>
+      </div>
+      <div class="barber-card">
+        <img src="oneer.jpg" alt="Oneer Solaiman">
+        <h3>Oneer Solaiman</h3>
+        <p> Barber </p>
+        <p>Oneer specializes in contemporary styles and has been with EuroStyles for 4 years. His attention to detail and commitment to craft has earned him a loyal clientele..</p>
+        <p>Specialities: Modern Styles | Fades | Textured Cuts</p>
+        <a href="https://calendly.com/yourcalendlylink2" class="btn">Book Now</a>
+      </div>
+      <div class="barber-card">
+        <img src="nick.jpg" alt= "Nick Pisha">
+        <h3>Nick Pisha</h3>
+        <p>Barber</p>
+        <p>With over a decade of experience in the industry, Nick is a master of modern fades and contemporary styling techniques. His innovative approach and constant pursuit of new trends keep him at the cutting edge of barbering.</p>
+        <p>Specialities: Fades | Traditional techniques | Beard Grooming</p>
+        <a href="https://calendly.com/yourcalendlylink3" class="btn">Book Now</a>
+      </div>
+      <div class="barber-card">
+        <img src="rich.jpg" alt="rich">
+        <h3>Rich</h3>
+        <p>Barber</p>
+        <p>Richard brings his artistic flair to every cut. With a background in art and 10 years in barbering, he creates unique styles tailored to each client's personality.</p>
+        <p> Specialities: Creative Designs | Skin Fades | Razor Work</p>
+        <a href="https://calendly.com/yourcalendlylink3" class="btn">Book Now</a>
+      </div>
+      <div class="barber-card">
+        <img src="glen.jpg" alt="Glen">
+        <h3>Glen</h3>
+        <p>Barber</p>
+        <p>Mariglent is a versatile barber who excels in all aspects of men's grooming. While skilled in traditional cuts and modern styles, his well-rounded expertise makes him a true generalist in the barbering craft</p>
+       <p> Specialities: Beard Styling | Fades | Beard Maintenance</p>
+        <a href="https://calendly.com/yourcalendlylink3" class="btn">Book Now</a>
+      </div>
+      <div class="barber-card">
+        <img src="jack.jpg" alt="Jack R">
+        <h3>Jack R</h3>
+        <p>Barber</p>
+        <p>Jack's background in detailed craftsmanship shines through in his precision cuts. He excels at creating clean, structured styles with perfect lines.
+
+        </p>
+        <p>Specialities: Precision Cuts | Fades | Line Work</p>
+        <a href="https://calendly.com/yourcalendlylink3" class="btn">Book Now</a>
+      </div>
+      <div class="barber-card">
+        <img src="nicholas.jpg" alt="Nik Stanaj">
+        <h3>Nik Stanaj</h3>
+        <p> Barber </p>
+        <p>Nick specializes in modern fades and contemporary styling techniques. His innovative approach and attention to emerging trends create fresh, cutting-edge looks for today's fashion-forward clients.</p>
+        <p> Specialities: Fades | Traditional Techniques | Tapers</p>
+        <a href="https://calendly.com/yourcalendlylink3" class="btn">Book Now</a>
+      </div>
+      <div class="barber-card">
+        <img src="val.jpg" alt="Vel">
+        <h3>Vel</h3>
+        <p> Barber </p>
+        <p>Vel brings over a decade of barbering expertise with a focus on classic techniques blended with modern styles. Known for his meticulous attention to detail and personalized approach, he creates tailored looks that enhance each client's unique features.</p>
+       <p> Specialities: Fades | Traditional Techniques | Beard Grooming</p>
+        <a href="https://calendly.com/yourcalendlylink3" class="btn">Book Now</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Business Hours & Contact Section -->
+  <section id="contact" class="section">
+    <h2>Business Hours & Contact</h2>
+    <div class="contact-section">
+      <p><strong>Hours:</strong> Tuesday - Friday: 8 AM - 6 PM | Saturday: 9 AM - 2 PM | Sunday - Monday: Closed</p>
+      <p><strong>Address:</strong> 41130 Hayes Rd, Clinton Twp, MI 48038</p>
+      <p><strong>Phone:</strong> (586) 913-7645</p>
+      <div class="google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2936.9802887729697!2d-82.97391422341096!3d42.59816172002493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824dfe9081d5419%3A0x9ae7ea0693f2b3f0!2sEuro%20Styles!5e0!3m2!1sen!2sus!4v1743388050193!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </div>
+    </div>
+  </section>
+  
+  <!-- Reviews Section -->
+  <section id="reviews" class="section">
+    <h2>Customer Reviews</h2>
+    <div class="reviews-container">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Amazing service and a welcoming atmosphere. Love the vibe!"</p>
+        <p>- Chris</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p>"Great experience every time I visit. Highly recommended!"</p>
+        <p>- Sam</p>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"The barbers are true professionals. Best cut I've ever had!"</p>
+        <p>- Jordan</p>
+      </div>
+    </div>
+  </section>
+  
+  <footer>&copy; 2025 EuroStyles Barbershop. All rights reserved</footer>
+</body>
+</html>
