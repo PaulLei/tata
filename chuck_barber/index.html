@@ -92,7 +92,7 @@
       background: rgba(0,0,0,0.6);
     }
     .container { position: relative; z-index: 2; padding: 20px; }
-    h1 { font-family: 'Playfair Display', serif; font-size: 5rem; text-transform: uppercase; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 5rem; text-transform: uppercase; color: white }
     .btn {
       display: inline-block;
       background: #ffcc00;
@@ -121,7 +121,7 @@
       height:100%;
       background: rgba(0,0,0,0.7);
     }
-    .section h2, .section p { position: relative; z-index: 2; }
+    .section h1, .section p { position: relative; z-index: 2; }
     #about { background: url('pic3.jpg') no-repeat center center fixed; }
     #services { background: url('pic2.jpg') no-repeat center center fixed; }
     /* Reviews Section */
@@ -149,6 +149,14 @@
       padding: 20px;
       font-size: 14px;
     }
+    .footer-phone {
+  color: #ffcc00;
+  font-weight: bold;
+  text-decoration: none;
+}
+.footer-phone:hover {
+  text-decoration: underline;
+}
   </style>
 </head>
 <body>
@@ -189,8 +197,7 @@
 
   <!-- About Section -->
   <section id="about" class="section">
-    <h2>About Us</h2>
-    <h1 class="heading-lg mb-4">About EuroStyles</h1>
+    <h1 >About EuroStyles</h1>
     <p>Since 2018, we've been redefining what it means to step into a barbershop. We're not just barbers—we're artists. Every haircut is a masterpiece, every client a unique canvas. A true artist's eye sees beyond trends, shaping each look to complement your features, style, and individuality. Whether it's a sharp fade, a textured crop, or a bold new look, we craft cuts that don't just suit you—they elevate you.
 
       We've crafted a premium, luxurious atmosphere where every detail—from the sleek design to the warm hospitality—is designed to help you relax, unwind, and enjoy the artistry of your cut.</p>
@@ -198,13 +205,14 @@
 
   <!-- Services Section -->
   <section id="services" class="section">
-    <h2>Our Services</h2>
-    <p>We offer classic and modern haircuts, beard trims, and hot towel shaves tailored to your style.</p>
+    <h1>Our Services</h1>
+    <p> Premium Haircuts | Beard Trims | Hot Towel Shaves | Hair Styling | Grooming Products</p>
+    <p> Our team of professional barbers brings together years of experience, specialized skills, and a passion for the art of barbering to provide you with exceptional service.</p>
   </section>
 
   <!-- Reviews Section -->
   <section id="reviews" class="section">
-    <h2>Customer Reviews</h2>
+    <h1>Customer Reviews</h1>
     <div class="reviews-container">
       <div class="review-card">
         <div class="stars">★★★★★</div>
@@ -224,6 +232,9 @@
     </div>
   </section>
 
-  <footer>&copy; 2025 EuroStyles Barbershop. All rights reserved</footer>
+  <footer>
+    <p>&copy; 2025 EuroStyles Barbershop. All rights reserved</p>
+    <p><a href="(586) 913-7645" class="footer-phone">(586) 913-7645</a></p>
+  </footer>
 </body>
 </html>
